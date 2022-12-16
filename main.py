@@ -22,7 +22,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-
+print("hello")
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -63,7 +63,7 @@ class Comment(db.Model):
     text = db.Column(db.Text, nullable=False)
 db.create_all()
 
-
+print("hello ")
 def admin_only(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
